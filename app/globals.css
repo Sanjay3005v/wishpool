@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #FFF0F5;
+  --text-main: #121212;
+  --card-bg: #FFFFFF;
+  --card-text: #121212;
+  --primary: #FF2E93;
+  --primary-hover: #E0187A;
+  --primary-fg: #FFFFFF;
+  --secondary: #A6FF00;
+  --secondary-hover: #8FE000;
+  --secondary-fg: #000000;
+  --accent: #7928CA;
+  --accent-hover: #6218AA;
+  --accent-fg: #FFFFFF;
+  --muted: #FCE7F3;
+  --border-color: #000000;
+  --radius-neo: 16px;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Neo-brutalist buttons & cards */
+.neo-box {
+  background-color: var(--card-bg);
+  border: 3px solid var(--border-color);
+  box-shadow: 4px 4px 0px 0px var(--border-color);
+  border-radius: var(--radius-neo);
+  transition: all 0.15s ease-in-out;
+}
+
+.neo-box-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--border-color);
+}
+
+.neo-btn {
+  border: 3px solid var(--border-color);
+  box-shadow: 3px 3px 0px 0px var(--border-color);
+  border-radius: var(--radius-neo);
+  font-weight: 700;
+  transition: all 0.12s ease-in-out;
+  cursor: pointer;
+}
+
+.neo-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px var(--border-color);
+}
+
+.neo-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px var(--border-color);
+}
+
+.neo-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 2px 2px 0px 0px var(--border-color);
+}
+
+/* Striped pattern for pending progress */
+.bg-stripes-pending {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.4) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* Subtle dot grid background for landing / hero */
+.bg-dots {
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-opacity: 0.08;
+}
